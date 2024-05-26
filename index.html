@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="heading">To Do List </div>
+    <div class="list-container" id="list-container">
+       
+            <div class="item">list1</div>
+    </div>
+    </div>
+    
+    <div class="container">
+        <input type="text" id="input-todo" style="width: 400px; border-radius:15px ; border:2px solid black; background-color: pink;">
+        
+    &nbsp; &nbsp;
+        <button type="button" onclick="add()" style="border-radius: 6px;padding: 10px; background-color: pink;">
+            Add
+        </button>
+
+    </div>
+
+    <script>
+        let todoList = []
+
+        const localstoragelist = localStorage.getItem("todoList");
+        if(localstoragelist){
+            todoList = JSON.parse(localstoragelist);
+            renderToDoList();
+        }
+        function add()
+        {
+            const inputElement = document.getElementById("input-todo");
+            todoList.push(inputElement.value);
+             localStorage.setItem("todoList",JSON.stringify(todoList));
+            inputElement.value=" ";
+            
+            renderToDoList()
+        }
+
+        function renderToDoList()
+        {
+            const listContainer = document.getElementById("list-container")
+            listContainer.innerHTML = " ";
+
+            for(const todoItem of todoList)
+            {
+                listContainer.innerHTML += `<div class="item">
+                    <input type="checkbox"/>
+                    ${todoItem} </div><hr>`;
+            }
+        }
+    </script>
+    
+</body>
+</html>

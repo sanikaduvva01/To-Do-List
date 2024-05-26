@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@200..700&family=Pacifico&display=swap');
+body
+{
+   background-color:white;
+}
+.heading
+{
+   text-align: center;
+   font-size: 40px;
+   color: black;
+   font-weight: bolder;
+  margin: 10px;
+}
+.container
+{
+   display: flex;
+   justify-content: center;
+   margin-top: 20px;
+   padding: 20px;
+   margin: 10px;
+
+}
+.list-container
+{
+display: block;
+margin:  0 auto;
+height: 400px;
+width: 500px;
+border: 2px solid ;
+border-radius:10px;
+padding: 10px;
+background-color:palevioletred ;
+overflow-y: scroll;
+font-size: 20px;
+}
+
+.item
+{
+background-color: pink;
+padding: 10px;
+margin: 10px;
+border-radius: 20px;
+}
